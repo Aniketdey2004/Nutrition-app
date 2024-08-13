@@ -1,6 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 export default function Register() {
+    const [user,setUser] = useState({
+        name:"",
+        email:"",
+        password:"",
+        age:""
+    })
+    function HandleInput(event)
+    {
+        setUser((prevDetails)=>{
+            return {...prevDetails,[event.target.name]:event.target.value}
+        })
+    }
     return (
         <section className='container'>
             <div className="form-container">
