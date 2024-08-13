@@ -1,8 +1,8 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 export default function Register() {
     return (
-        <section className='form-parent'>
+        <section className='container'>
             <div className="form-container">
                 <h2 className='form-header'>Register</h2>
                 <form>
@@ -23,7 +23,7 @@ export default function Register() {
                         <input type="number" placeholder='Enter Age' required />
                     </div>
                     <button type="submit">Register</button>
-                    <p>Already have an account? Sign-in</p>
+                    <p>Already have an account? <Link to="/login">Login</Link></p>
                 </form>
         </div>
         </section>

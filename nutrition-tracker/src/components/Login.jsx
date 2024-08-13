@@ -1,8 +1,8 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 export default function Login() {
     return (
-        <section className='form-parent'>
+        <section className='container'>
             <div className="form-container">
                 <h2 className='form-header'>Login</h2>
                 <form>
@@ -15,7 +15,7 @@ export default function Login() {
                         <input type="password" placeholder='Enter password' required />
                     </div>
                     <button type="submit">Login</button>
-                    <p>Don't have an account? Login</p>
+                    <p>Don't have an account? <Link to="/register">Login</Link></p>
                 </form>
             </div>
         </section>
