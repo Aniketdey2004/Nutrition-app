@@ -8,6 +8,10 @@ export default function Register() {
         password:"",
         age:""
     })
+    const [message,setMessage]=useState({
+        type:"invisible-msg",
+        text:"Dummy Msg"
+    })
     function HandleInput(event)
     {
         setUser((prevDetails)=>{
@@ -23,8 +27,19 @@ export default function Register() {
                 "Content-Type": "application/json"
             }
         })
-        .then((response) => {
-            console.log(response);
+        .then((response) =>response.json())
+        .then((data)=>{
+            setMessage({type:"success",text:data.message})
+
+            setUser({
+                name:"",
+                email:"",
+                password:"",
+                age:""
+            })
+            setTimeout(()=>{
+                setMessage({type:"invisible-msg",text:"Dummy sg"});
+            },5000)
         })
         .catch((err) => {
             console.log(err);
@@ -54,6 +69,7 @@ export default function Register() {
                     </div>
                     <button type="submit" onClick={HandleSubmit}>Register</button>
                     <p>Already have an account? <Link to="/login">Login</Link></p>
+                    <p className={message.type}>{message.text}</p>
                 </form>
         </div>
         </section>
