@@ -15,7 +15,7 @@ export default function Login() {
                         <input type="password" placeholder='Enter password' required />
                     </div>
                     <button type="submit">Login</button>
-                    <p>Don't have an account? <Link to="/register">Login</Link></p>
+                    <p>Don't have an account? <Link to="/register">Register</Link></p>
                 </form>
             </div>
         </section>
