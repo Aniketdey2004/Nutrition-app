@@ -16,7 +16,7 @@ export default function Register() {
     }
     function HandleSubmit(event) {
         event.preventDefault();
-        /*fetch("https://localhost:8000/register", {
+        fetch("http://localhost:8000/register", {
             method: "POST",
             body: JSON.stringify(user),
             headers: {
@@ -28,8 +28,7 @@ export default function Register() {
         })
         .catch((err) => {
             console.log(err);
-        });*/
-        console.log(user)
+        });
     }
     
     return (
