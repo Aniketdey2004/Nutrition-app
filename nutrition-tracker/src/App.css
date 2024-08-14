@@ -64,18 +64,30 @@ a{
   text-decoration: none;
   color: #170202;
 }
-.success{
+.success {
   background-color: lightgreen;
   color: green;
   width: 100%;
   padding: 10px;
   border-radius: 5px;
   opacity: 1;
+  text-align: center;
 }
-
+.error{
+  background-color: lightgreen;
+  color: green;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  opacity: 1;
+  text-align: center;
+}
 .invisible-msg{
   width: 100%;
   padding: 10px;
   border-radius: 5px;
   opacity: 0;
+}
+.login-success-msg{
+  text-align: center;
 }
