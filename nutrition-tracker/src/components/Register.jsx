@@ -14,11 +14,24 @@ export default function Register() {
             return {...prevDetails,[event.target.name]:event.target.value}
         })
     }
-    function HandleSubmit(event)
-    {
+    function HandleSubmit(event) {
         event.preventDefault();
+        /*fetch("https://localhost:8000/register", {
+            method: "POST",
+            body: JSON.stringify(user),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        .then((response) => {
+            console.log(response);
+        })
+        .catch((err) => {
+            console.log(err);
+        });*/
         console.log(user)
     }
+    
     return (
         <section className='container'>
             <div className="form-container">
