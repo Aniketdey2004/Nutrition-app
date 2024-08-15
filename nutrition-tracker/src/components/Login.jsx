@@ -1,22 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link,useNavigate } from "react-router-dom"
-import { useState } from "react"
+import { useState, useContext} from "react"
+import { UserContext } from '../contexts/UserContext';
 export default function Login() {
+    const loggedInData=useContext(UserContext);
+
     const [userCreds,setUserCreds]= useState({
         email:"",
         password:""
     })
+
     const [message,setMessage]=useState({
         type:"invisible-msg",
         text:"Dummy msg"
     })
+
     const navigate = useNavigate();
+
     function handleInput(event)
     {
         setUserCreds((prevDetails)=>{
             return {...prevDetails,[event.target.name]:event.target.value}
         })
     }
+    
     function handleSubmit(event) {
         event.preventDefault();
         fetch("http://localhost:8000/login",{
@@ -43,6 +50,7 @@ export default function Login() {
             if(data.token!==undefined)
             {
                 localStorage.setItem("nutrify-user",JSON.stringify(data))
+                loggedInData.setLoggedUser(data);
                 navigate("/track");
             }
         })
@@ -50,6 +58,7 @@ export default function Login() {
             console.log(err);
         });
     }
+
     return (
         <section className='container'>
             <div className="form-container">

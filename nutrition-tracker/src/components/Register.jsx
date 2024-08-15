@@ -1,23 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useState } from "react"
+
 export default function Register() {
+
     const [user,setUser] = useState({
         name:"",
         email:"",
         password:"",
         age:""
     })
+
     const [message,setMessage]=useState({
         type:"invisible-msg",
         text:"Dummy Msg"
     })
+
     function HandleInput(event)
     {
         setUser((prevDetails)=>{
             return {...prevDetails,[event.target.name]:event.target.value}
         })
     }
+    
     function HandleSubmit(event) {
         event.preventDefault();
         fetch("http://localhost:8000/register", {
