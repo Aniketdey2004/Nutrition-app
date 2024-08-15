@@ -12,7 +12,7 @@ export default function Header(){
     }
 
     return(
-        <div>
+        <div className="header">
             <ul>
                 <li>Home</li>
                 <li onClick={logout}>Logout</li>

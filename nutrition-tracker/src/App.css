@@ -3,6 +3,7 @@
 body {
   background-color: #282626;
 }
+/*form css*/
 .container{
   width: 100%;
   height: 100vh;
@@ -95,10 +96,11 @@ a{
 /*track page css*/
 .search{
   width: 100%;
+  padding: 10px;
+  background-color: #7fdad0;
 }
 
 .track-container{
-  padding: 10px;
   align-items: flex-start;
 }
 
@@ -112,8 +114,11 @@ a{
   border: 1px solid gray;
   font-size: 18px;
 }
+.search-container{
+  margin: 10px;
+}
 .search-results {
-  margin-top: 20px;
+  /*margin-top: 20px;*/
   padding: 10px;
   background-color: #f9f9f9;
   border: 1px solid #ddd;
@@ -139,7 +144,7 @@ a{
 }
 
 .display-product {
-  margin-top: 20px;
+  margin: 20px 10px;
   padding: 20px;
   background-color: #fdfdfd;
   border: 1px solid #e0e0e0;
@@ -197,3 +202,46 @@ a{
 .display-product p:nth-child(6) span {
   color: #1d3557;
 }
+
+.Quantity-cal{
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+/*header page css*/
+.header {
+  background-color: #2a9d8f; 
+  padding: 10px 20px; 
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); 
+}
+
+/* Unordered List (Navigation Menu) */
+.header ul {
+  list-style: none; 
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  margin: 0; 
+  padding: 0; 
+}
+
+/* List Items */
+.header li {
+  margin-right: 20px; 
+  font-size: 18px;
+  font-weight: bold;
+  color: white; 
+  cursor: pointer; 
+  transition: color 0.3s ease;
+}
+
+/* Last Item (Logout) */
+.header li:last-child {
+  margin-right: 0; 
+}
+
+/* Hover Effect */
+.header li:hover {
+  color: #e76f51; 
+}
+
