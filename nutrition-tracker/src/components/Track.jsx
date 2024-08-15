@@ -1,6 +1,11 @@
 import React from 'react';
-export default function Track(){
-    return(
-        <h1 className='login-success-msg'>Welcome you are Successfully logged in</h1>
-    )
+import Header from './Header';
+
+export default function Track() {
+    return (
+        <>
+            <Header />
+            <h1 className='login-success-msg'>Welcome, you are successfully logged in</h1>
+        </>
+    );
 }

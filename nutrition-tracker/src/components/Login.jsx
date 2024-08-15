@@ -3,7 +3,7 @@ import { Link,useNavigate } from "react-router-dom"
 import { useState, useContext} from "react"
 import { UserContext } from '../contexts/UserContext';
 export default function Login() {
-    const loggedInData=useContext(UserContext);
+    const loggedData=useContext(UserContext);
 
     const [userCreds,setUserCreds]= useState({
         email:"",
@@ -50,7 +50,7 @@ export default function Login() {
             if(data.token!==undefined)
             {
                 localStorage.setItem("nutrify-user",JSON.stringify(data))
-                loggedInData.setLoggedUser(data);
+                loggedData.setLoggedUser(data);
                 navigate("/track");
             }
         })
