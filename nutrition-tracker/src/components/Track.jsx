@@ -21,6 +21,38 @@ export default function Track() {
         updateFood(newQuantity);
     }
     
+    function trackFoodItem()
+    {
+        let trackedItem={
+            userId:loggedData.loggedUser.userid,
+            foodId:copyfood._id,
+            details:{
+                protein:copyfood.protein,
+                carbohydrates:copyfood.carbohydrates,
+                fat:copyfood.fat,
+                fiber:copyfood.fiber,
+                calories:copyfood.calories
+            },
+            quantity:quantity
+        }
+        
+        fetch("http://localhost:8000/track",{
+            method:"POST",
+            body: JSON.stringify(trackedItem),
+            headers:{
+                "Authorization":`Bearer ${loggedData.loggedUser.token}`,
+                "Content-Type":"application/json"
+            }
+        })
+        .then((response)=>response.json())
+        .then((data)=>{
+            console.log(data);
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
+    }   
+
     function updateFood(newQuantity) {
         if (newQuantity && food) {
             let cfood = { ...food };
@@ -105,7 +137,7 @@ export default function Track() {
                         <input onChange={(event) => {
                             updateQuantity(event);
                         }} className='Quantity-cal' type="number" placeholder='Enter quantity Consumed' />
-                        <button>Add</button>
+                        <button onClick={trackFoodItem}>Add</button>
                     </div>:null
                 }
             </section>
