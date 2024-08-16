@@ -20,7 +20,7 @@ function App() {
             <Route path="/login" element={<Login/>}/>
             <Route path="/register" element={<Register/>}/>
             <Route path='/track' element={<Private component={Track} />} />
-            <Route path='/track' element={<Private component={<Diet/>} />} />
+            <Route path='/Diet' element={<Private component={Diet} />} />
             <Route path="*" element={<NotFound/>}/>
         </Routes>
       </BrowserRouter> 

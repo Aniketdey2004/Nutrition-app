@@ -1,6 +1,7 @@
 import { UserContext } from "../contexts/UserContext";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 export default function Header(){
     const loggedData=useContext(UserContext);
     const navigate= useNavigate();
@@ -14,9 +15,18 @@ export default function Header(){
     return(
         <div className="header">
             <ul>
-                <li>Home</li>
-                <li onClick={logout}>Logout</li>
+                <li className="header-items">
+                    <ul>
+                        <Link to={"/track"}><li className="nav-comp">Home</li></Link>
+                        <Link to={"/Diet"}><li className="nav-comp">Diet</li></Link>
+                    </ul>
+                </li>
+                <li onClick={logout} className="header-logout">
+                    <li>Logout</li>
+                </li>
             </ul>
         </div>
     )
 }
+
+                        
