@@ -78,5 +78,85 @@
       "fat": 0.1,
       "fiber": 3,
       "carbohydrates": 20
+    },
+    {
+      "name": "Avocado",
+      "calories": 160,
+      "protein": 2,
+      "fat": 15,
+      "fiber": 7,
+      "carbohydrates": 9
+    },
+    {
+      "name": "Blueberries",
+      "calories": 57,
+      "protein": 0.7,
+      "fat": 0.3,
+      "fiber": 2.4,
+      "carbohydrates": 14
+    },
+    {
+      "name": "Brown Rice",
+      "calories": 123,
+      "protein": 2.6,
+      "fat": 1,
+      "fiber": 1.8,
+      "carbohydrates": 25.6
+    },
+    {
+      "name": "Greek Yogurt",
+      "calories": 59,
+      "protein": 10,
+      "fat": 0.4,
+      "fiber": 0,
+      "carbohydrates": 3.6
+    },
+    {
+      "name": "Quinoa",
+      "calories": 120,
+      "protein": 4.1,
+      "fat": 1.9,
+      "fiber": 2.8,
+      "carbohydrates": 21.3
+    },
+    {
+      "name": "Tofu",
+      "calories": 76,
+      "protein": 8,
+      "fat": 4.8,
+      "fiber": 0.3,
+      "carbohydrates": 1.9
+    },
+    {
+      "name": "Walnuts",
+      "calories": 654,
+      "protein": 15,
+      "fat": 65,
+      "fiber": 6.7,
+      "carbohydrates": 14
+    },
+    {
+      "name": "Carrots",
+      "calories": 41,
+      "protein": 0.9,
+      "fat": 0.2,
+      "fiber": 2.8,
+      "carbohydrates": 9.6
+    },
+    {
+      "name": "Lentils",
+      "calories": 116,
+      "protein": 9,
+      "fat": 0.4,
+      "fiber": 7.9,
+      "carbohydrates": 20.1
+    },
+    {
+      "name": "Cottage Cheese",
+      "calories": 98,
+      "protein": 11,
+      "fat": 4.3,
+      "fiber": 0,
+      "carbohydrates": 3.4
     }
   ]

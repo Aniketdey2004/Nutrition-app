@@ -14,7 +14,7 @@ const trackingModel = require("./models/trackingModel")
 const verifyToken = require("./verifyToken")
 
 // database connection 
-mongoose.connect("mongodb://localhost:27017/user")
+mongoose.connect("mongodb://localhost:27017/nutrify")
 .then(()=>{
     console.log("Database connection successfull")
 })

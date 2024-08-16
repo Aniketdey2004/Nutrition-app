@@ -18,22 +18,26 @@ export default function Diet(){
         totalFiber:0
     })
 
-    useEffect(() => {
-        fetch(`http://localhost:8000/track/${loggedData.loggedUser.userid}/${loggedData.loggedUser.userid}/${date.getMonth()+1}-${date.getDate()}-${date.getFullYear()}`, {
-            method: "GET",
-            headers: {
-                "Authorization": `Bearer ${loggedData.loggedUser.token}`
+    
+    useEffect(()=>{
+
+        fetch(`http://localhost:8000/track/${loggedData.loggedUser.userid}/${date.getMonth()+1}-${date.getDate()}-${date.getFullYear()}`,{
+            method:"GET",
+            headers:{
+                "Authorization":`Bearer ${loggedData.loggedUser.token}`
             }
         })
-        .then((response) => response.json()) // Invoke .json() method
-        .then((data) => {
-            console.log(data)
+        .then((response)=>response.json())
+        .then((data)=>{
+            console.log(data);
             setItems(data);
         })
-        .catch((err) => {
+        .catch((err)=>{
             console.log(err);
-        });
-    },date); // Add dependency array
+        })
+
+    },[date])
+
     
     
     useEffect(()=>{
@@ -78,11 +82,11 @@ export default function Diet(){
                                 <>
                                 <div className="display-product">
                                     <p>{item.foodId.name}</p>
-                                    <p>Calories={item.foodId.calories}</p>
-                                    <p>Carbohydrates={item.foodId.carbohydrates}</p>
-                                    <p>fat={item.foodId.fat}</p>
-                                    <p>fiber={item.foodId.fiber}</p>
-                                    <p>protein={item.foodId.protein}</p>
+                                    <p>Calories={item.details.calories}</p>
+                                    <p>Carbohydrates={item.details.carbohydrates}</p>
+                                    <p>fat={item.details.fat}</p>
+                                    <p>fiber={item.details.fiber}</p>
+                                    <p>protein={item.details.protein}</p>
                                 </div>
                                 </>
                             )
@@ -93,7 +97,7 @@ export default function Diet(){
                 <div className="display-product">
                     <p> {total.totalCaloreis} Kcal </p>
                     <p>Protein={total.totalProtein}g</p> 
-                    <p>Carbs={total.totalCarbs}g</p> 
+                    <p>Carbohydrates={total.totalCarbs}g</p> 
                     <p>Fats={total.totalFats}g</p> 
                     <p>Fiber={total.totalFiber}g</p>
                 </div>
